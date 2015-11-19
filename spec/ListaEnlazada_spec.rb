@@ -223,7 +223,7 @@ describe ListaEnlazada do
         @lista1.insert(@nodo1)
         @lista1.insert(@nodo2)
         @lista1.insert(@nodo3)
-        expect(@lista1.cabeza).to eq @nodo3
+        expect(@lista1.inicio).to eq @nodo1
         @lista1.deletefirst()
         expect(@lista1.inicio).to eq @nodo2
         
