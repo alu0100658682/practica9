@@ -94,7 +94,25 @@ describe ListaEnlazada do
         expect(@ebook1.class.superclass.to_s == "Biblio").to eq true
         
     end
+  end
+  context "Métodos ListaEnlazada" do
+  
+    it "Comprobar que al insertar 1 nodo a la lista, inicio toma el valor del nodo." do
+        
+        expect(@lista1.inicio).to eq nil
+        @lista1.insert(@nodo2)
+        expect(@lista1.inicio).to eq @nodo2
+        
+    end
     
+    it "Comprobar que al insertar 1 nodo a la lista, cabeza toma el valor del nodo." do
+        
+        expect(@lista1.cabeza).to eq nil
+        @lista1.insert(@nodo2)
+        expect(@lista1.cabeza).to eq @nodo2
+        
+    end
     
   end
+  
 end
