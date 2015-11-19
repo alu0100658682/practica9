@@ -64,5 +64,13 @@ describe ListaEnlazada do
       expect(@lista1.listavacia()).to eq true
       
     end
-end
+    
+    it "Insertar un nodo en la lista." do
+         
+      @lista1.insert(@nodo1)
+      expect(@lista1.listavacia()).not_to eq true
+      
+    end
+    
+  end
 end

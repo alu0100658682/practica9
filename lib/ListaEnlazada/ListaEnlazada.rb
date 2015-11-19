@@ -48,4 +48,15 @@ class List
                 
         end
     end
+    
+    def insert2(array)
+        
+        for i in 0..(array.length-1)
+        
+            insert(array[i])
+            
+        end
+    end
+    
+    
 end
