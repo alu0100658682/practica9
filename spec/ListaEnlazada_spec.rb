@@ -179,6 +179,15 @@ describe ListaEnlazada do
         expect(@lista1.inicio.next).to eq @nodo2
         
     end
+    
+    it "Mostrar el primer nodo de la lista." do
+        
+      @lista1.insert(@nodo1)
+      @lista1.insert(@nodo2)
+      @lista1.insert(@nodo3)
+      expect(@lista1.extraerprimero()).to eq("[\"Pepe\"], Marca, 12, Tuesday, 07/07/2015, [\"123123123\"]")
+      
+    end
   end
   end
   
