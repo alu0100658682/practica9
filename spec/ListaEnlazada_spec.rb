@@ -150,6 +150,16 @@ describe ListaEnlazada do
         expect(@lista1.length()).to eq 2
         
     end
+    
+     it "Insertar varios nodos en una lista." do
+         
+        a = Array.new()
+        a.push(@nodo1,@nodo2,@nodo3)
+        @lista1.insert2(a)
+        expect(@lista1.listavacia()).not_to eq true
+         
+    end
+    
   end
   end
   
