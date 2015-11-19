@@ -118,6 +118,12 @@ class List
     end
     
     def delete(pos)
+        if (pos == 0)
+            self.deletefirst()
+        end
+        if (pos == self.length())
+            self.deletelast()
+        end
         
         nodo = @inicio
         if (self.length() > pos && pos != 0  )
@@ -142,6 +148,4 @@ class List
             end
         end
     end
-    
-    
 end

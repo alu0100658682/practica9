@@ -240,7 +240,6 @@ describe ListaEnlazada do
         expect(@lista1.nodelist()).to eq("[\"Pepe\"], Marca, 12, Tuesday, 07/07/2015, [\"123123123\"]\n[\"Fernando Cortés\"], El charco bajo el agua, 12, Sunday, 07/07/2013, [\"ISBN-13: 978-1937785499\"], http://www.ebookgratis.com\n")
     
     end
-    
   end
   end
   
