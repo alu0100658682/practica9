@@ -188,6 +188,16 @@ describe ListaEnlazada do
       expect(@lista1.extraerprimero()).to eq("[\"Pepe\"], Marca, 12, Tuesday, 07/07/2015, [\"123123123\"]")
       
     end
+    
+    it "Mostrar el último nodo de la lista." do
+        
+      @lista1.insert(@nodo1)
+      @lista1.insert(@nodo2)
+      @lista1.insert(@nodo3)
+      expect(@lista1.extraerultimo()).to eq("[\"Fernando Cortés\"], El charco bajo el agua, 12, Sunday, 07/07/2013, [\"ISBN-13: 978-1937785499\"], http://www.ebookgratis.com")
+      
+    end
+    
   end
   end
   
