@@ -151,7 +151,7 @@ describe ListaEnlazada do
         
     end
     
-     it "Insertar varios nodos en una lista." do
+    it "Insertar varios nodos en una lista." do
          
         a = Array.new()
         a.push(@nodo1,@nodo2,@nodo3)
@@ -160,6 +160,25 @@ describe ListaEnlazada do
          
     end
     
+     it "Comprobar que al insertar 2 nodos, la variable prev del segundo, apunta al primero." do
+        
+        @lista1.insert(@nodo1)
+        @lista1.insert(@nodo2)
+
+        expect(@lista1.cabeza).to eq @nodo2
+        expect(@lista1.cabeza.prev).to eq @nodo1
+        
+    end
+    
+    it "Comprobar que al insertar 2 nodos, la variable next del primero, apunta al segundo." do
+        
+        @lista1.insert(@nodo1)
+        @lista1.insert(@nodo2)
+
+        expect(@lista1.inicio).to eq @nodo1
+        expect(@lista1.inicio.next).to eq @nodo2
+        
+    end
   end
   end
   
