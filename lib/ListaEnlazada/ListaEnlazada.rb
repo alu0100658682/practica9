@@ -75,5 +75,11 @@ class List
         
     end
     
+    def extraerprimero()
+        
+        @inicio.value.to_s
+        
+    end
+    
     
 end
