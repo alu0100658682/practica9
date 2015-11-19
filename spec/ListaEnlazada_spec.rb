@@ -113,6 +113,44 @@ describe ListaEnlazada do
         
     end
     
+    context "Métodos ListaEnlazada" do
+  
+    it "Comprobar que al insertar 1 nodo a la lista, inicio toma el valor del nodo." do
+        
+        expect(@lista1.inicio).to eq nil
+        @lista1.insert(@nodo2)
+        expect(@lista1.inicio).to eq @nodo2
+        
+    end
+    
+    it "Comprobar que al insertar 1 nodo a la lista, cabeza toma el valor del nodo." do
+        
+        expect(@lista1.cabeza).to eq nil
+        @lista1.insert(@nodo2)
+        expect(@lista1.cabeza).to eq @nodo2
+        
+    end
+     
+    it "Comprobar que al insertar 2 nodos, inicio toma el valor del primero y cabeza el del segundo." do
+        
+        @lista1.insert(@nodo1)
+        @lista1.insert(@nodo2)
+
+        expect(@lista1.inicio).to eq @nodo1
+        expect(@lista1.cabeza).to eq @nodo2
+        
+    end
+    
+    it "Función para comprobar la longitud de la lista" do
+        
+        @lista1.insert(@nodo1)
+        @lista1.insert(@nodo2)
+        @lista1.insert(@nodo3)
+        
+        expect(@lista1.length()).to eq 2
+        
+    end
+  end
   end
   
 end

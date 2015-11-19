@@ -58,5 +58,22 @@ class List
         end
     end
     
+    def length()
+        
+        i=0
+        nodo = @inicio
+        
+        loop do 
+            
+            nodo = nodo.next
+            i = i + 1
+            
+        break if(nodo.next == nil)
+        end 
+        
+        return i
+        
+    end
+    
     
 end
