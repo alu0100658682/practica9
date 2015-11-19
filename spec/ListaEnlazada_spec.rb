@@ -207,6 +207,17 @@ describe ListaEnlazada do
         
     end
     
+    it "Eliminar el último nodo de la lista." do
+        
+        @lista1.insert(@nodo1)
+        @lista1.insert(@nodo2)
+        @lista1.insert(@nodo3)
+        expect(@lista1.cabeza).to eq @nodo3
+        @lista1.deletelast()
+        expect(@lista1.cabeza).to eq @nodo2
+        
+    end
+    
   end
   end
   

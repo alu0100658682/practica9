@@ -102,4 +102,13 @@ class List
         end
         return  a
     end
+    
+    def deletelast()
+        
+        @cabeza = @cabeza.prev
+        @cabeza.next = nil
+        
+    end
+    
+    
 end
