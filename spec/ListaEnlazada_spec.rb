@@ -198,6 +198,15 @@ describe ListaEnlazada do
       
     end
     
+    it "Mostrar todos los elementos de la lista." do
+        
+      @lista1.insert(@nodo1)
+      @lista1.insert(@nodo2)
+      @lista1.insert(@nodo3)
+      expect(@lista1.nodelist()).to eq("[\"Pepe\"], Marca, 12, Tuesday, 07/07/2015, [\"123123123\"]\n[\"Dave Thomas\", \"Andy Hunt\", \"Chad Fowler\"], Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide. (The Facets of Ruby)., , Pragmatic Bookshelf, 4 edition, Sunday, 07/07/2013, [\"ISBN-13: 978-1937785499\"]\n[\"Fernando Cortés\"], El charco bajo el agua, 12, Sunday, 07/07/2013, [\"ISBN-13: 978-1937785499\"], http://www.ebookgratis.com\n")
+        
+    end
+    
   end
   end
   

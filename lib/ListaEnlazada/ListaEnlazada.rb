@@ -87,5 +87,19 @@ class List
         
     end
     
-    
+    def nodelist()
+        
+        node = @inicio 
+        a = String.new()
+        
+        loop do
+            
+            a << node.value.to_s 
+            a << "\n"
+            node = node.next
+        
+        break if (node == nil)
+        end
+        return  a
+    end
 end
