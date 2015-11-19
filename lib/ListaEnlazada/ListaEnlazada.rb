@@ -117,5 +117,31 @@ class List
         
     end
     
+    def delete(pos)
+        
+        nodo = @inicio
+        if (self.length() > pos && pos != 0  )
+            # puts self.length()
+            # puts
+            # puts pos
+            for i in 1..pos
+                # puts "Value of local variable is #{i}"
+                nodo = nodo.next
+            end
+            if (nodo != nil)
+                
+                auxprev = nodo.prev
+                auxnext = nodo.next
+                nodo.prev = nil
+                nodo.next = nil
+                auxprev.next = auxnext
+                auxnext.prev = auxprev
+            
+            else
+                #No hay nodo en esa posición
+            end
+        end
+    end
+    
     
 end
