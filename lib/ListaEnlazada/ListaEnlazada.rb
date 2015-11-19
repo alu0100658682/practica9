@@ -81,5 +81,11 @@ class List
         
     end
     
+    def extraerultimo()
+       
+        @cabeza.value.to_s
+        
+    end
+    
     
 end
