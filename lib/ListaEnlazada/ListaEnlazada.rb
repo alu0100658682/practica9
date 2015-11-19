@@ -110,5 +110,12 @@ class List
         
     end
     
+    def deletefirst()
+        
+        @inicio = @inicio.next
+        @inicio.prev = nil
+        
+    end
+    
     
 end
