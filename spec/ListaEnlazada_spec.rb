@@ -71,6 +71,16 @@ describe ListaEnlazada do
       expect(@lista1.listavacia()).not_to eq true
       
     end
+  end
+  context "Comprobar herencia" do
+      
+    it "Crear un objeto de la clase Libro que herede de la clase Biblio." do
+        
+        expect(@libro1.class.to_s == "Libro").to eq true
+        expect(@libro1.class.superclass.to_s == "Biblio").to eq true
+        
+    end
+    
     
   end
 end
