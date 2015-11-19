@@ -81,6 +81,13 @@ describe ListaEnlazada do
         
     end
     
+    it "Crear un objeto de la clase Revista que herede de la clase Biblio." do
+        
+        expect(@revista1.class.to_s == "Revista").to eq true
+        expect(@revista1.class.superclass.to_s == "Biblio").to eq true
+        
+    end
+    
     
   end
 end
