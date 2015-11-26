@@ -2,10 +2,10 @@ Lenguajes y Paradigmas de la Programación
 
     Práctica realizada por: Jacobo Saavedra Valdés
     
-    Listas Enlazadas
+    Listas Enlazadas con comparable y enumerable
                         
 
-# ListaEnlazada
+# ListaEnlazada con comparable y enumerable
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ListaEnlazada`. To experiment with that code, run `bin/console` for an interactive prompt.
 
