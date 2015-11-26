@@ -17,14 +17,28 @@ class Biblio
         
     end
     
-    def <=> (other)
+#     def <=> (other)
+#         if ((other.instance_of? Revista) || (other.instance_of? Ebook) || (other.instance_of? Libro))
+#             return ((self.to_s[2]) <=> (other.to_s[2]))
+# 		else
+# 			false
+#         end
+#     end
+    
+    def <=>(other)
         if ((other.instance_of? Revista) || (other.instance_of? Ebook) || (other.instance_of? Libro))
-            return ((self.to_s[2]) <=> (other.to_s[2]))
-		else
-			false
+             if((@autor <=> other.autor)==0) 
+                 if ((@fecha_publicacion <=> other.fecha_publicacion)==0)
+                     @titulo <=> other.titulo
+                 else
+                     @fecha_publicacion <=> other.fecha_publicacion
+                 end
+             else
+                 @autor <=> other.autor
+             end
+        else
+            false
         end
     end
-    
-   
     
 end
