@@ -1,5 +1,7 @@
 class List
     
+    include Enumerable
+    
     attr_accessor :cabeza, :inicio
     
 
@@ -147,5 +149,17 @@ class List
                 #No hay nodo en esa posición
             end
         end
+    end
+    
+    def each
+        node = @inicio 
+            
+        while (node != nil)
+                    
+            yield node.value.to_s
+            node = node.next
+        
+        end
+        
     end
 end

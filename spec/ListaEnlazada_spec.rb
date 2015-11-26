@@ -28,7 +28,7 @@ describe ListaEnlazada do
     
   end
   
-  
+ 
   context "Correcta creación" do
       
      it "Debe crearse un objeto de tipo Lista." do
@@ -113,7 +113,7 @@ describe ListaEnlazada do
         
     end
     
-    context "Métodos ListaEnlazada" do
+  
   
     it "Comprobar que al insertar 1 nodo a la lista, inicio toma el valor del nodo." do
         
@@ -240,7 +240,29 @@ describe ListaEnlazada do
         expect(@lista1.nodelist()).to eq("[\"Pepe\"], Marca, 12, Tuesday, 07/07/2015, [\"123123123\"]\n[\"Fernando Cortés\"], El charco bajo el agua, 12, Sunday, 07/07/2013, [\"ISBN-13: 978-1937785499\"], http://www.ebookgratis.com\n")
     
     end
+  
   end
+   
+   context "Comparador <=>" do
+      it "#{@ebook1.to_s} < #{@revista1.to_s}" do
+          
+          expect(@ebook1.to_s < @revista1.to_s).to eq true
+          
+      end
+      
+      it "#{@ebook1.to_s} > #{@revista1.to_s}" do
+          
+          expect(@ebook1.to_s > @revista1.to_s).to eq false
+          
+      end
+      
+      it "#{@ebook1.to_s} == #{@revista1.to_s}" do
+          
+          expect(@ebook1.to_s == @revista1.to_s).to eq false
+          
+      end
+      
   end
+  
   
 end
