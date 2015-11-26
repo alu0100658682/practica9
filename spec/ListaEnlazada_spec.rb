@@ -264,5 +264,94 @@ describe ListaEnlazada do
       
   end
   
+  context "Enumerator (each)" do
+      
+      it "Comprobando el método all?" do  #??????????????????????????????????????
+          
+          expect(@lista1.all?).to eq(true)
+          
+      end
+      
+      it "comprobrando el metodo any?" do  
+          
+          expect(@lista1.any?).to eq(false)
+          @lista1.insert(@nodo1)        
+          expect(@lista1.any?).to eq(true)
+          
+      end
+      
+      it "Comprobando el método collect." do
+          
+          @lista1.insert(1)
+          @lista1.insert(2)
+          @lista1.insert(4)
+          @lista1.insert(3)
+          expect(@lista1.map {|i| (i.to_i)*(i.to_i)}).to eq [1, 4, 16, 9]
+          
+      end
+      
+      it "Comprobando el método count." do
+          
+          @lista1.insert(@nodo1)
+          @lista1.insert(@nodo2)
+          @lista1.insert(@nodo3)
+          expect(@lista1.count).to eq(3)
+          
+      end
+      
+      it "Comprobando el método detect.##" do
+          
+        #Detecta valores en el bloque que cumplan la condición dada  
+        @lista1.insert(1)
+        @lista1.insert(2)
+        @lista1.insert(4)
+        @lista1.insert(3)
+        expect(@lista1.detect {|i| i.to_i % 2 == 0 && i.to_i % 4 == 0}).to eq "4"
+        expect(@lista1.detect {|i| (i.to_i) % 2 == 0}).to eq "2"
+        # (1..10).detect   { |i| i % 5 == 0 and i % 7 == 0 }   #=> nil
+        # (1..100).find    { |i| i % 5 == 0 and i % 7 == 0 }   #=> 35
+          
+      end
+      
+      it "Comprobando drop." do
+          
+          @lista1.insert(@nodo1)
+          @lista1.insert(@nodo2)
+          expect(@lista1.drop(1)).to eq(["[\"Dave Thomas\", \"Andy Hunt\", \"Chad Fowler\"], Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide. (The Facets of Ruby)., , Pragmatic Bookshelf, 4 edition, Sunday, 07/07/2013, [\"ISBN-13: 978-1937785499\"]"])
+          
+      end
+      
+      it "Comprobando max." do
+          
+          @lista1.insert(1)
+          @lista1.insert(2)
+          @lista1.insert(4)
+          @lista1.insert(3)
+          expect(@lista1.max).to eq("4")
+          
+          
+      end
+      
+      it "comprobrando min." do
+          
+          @lista1.insert(1)
+          @lista1.insert(2)
+          @lista1.insert(4)
+          @lista1.insert(3)
+          expect(@lista1.min).to eq("1")
+          
+      end
+      
+      it "comprobrando sort." do
+          
+          @lista1.insert(1)
+          @lista1.insert(2)
+          @lista1.insert(4)
+          @lista1.insert(3)
+          expect(@lista1.sort).to eq(["1","2","3","4"])
+          
+      end
+      
+  end
   
 end
