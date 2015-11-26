@@ -267,8 +267,10 @@ describe ListaEnlazada do
   context "Enumerator (each)" do
       
       it "Comprobando el método all?" do  #??????????????????????????????????????
-          
-          expect(@lista1.all?).to eq(true)
+          @lista1.insert("a")
+          @lista1.insert("aaa")
+          expect(@lista1.all?{|x| x.length >1}).to eq(false)
+
           
       end
       
@@ -299,7 +301,7 @@ describe ListaEnlazada do
           
       end
       
-      it "Comprobando el método detect.##" do
+      it "Comprobando el método detect." do
           
         #Detecta valores en el bloque que cumplan la condición dada  
         @lista1.insert(1)
