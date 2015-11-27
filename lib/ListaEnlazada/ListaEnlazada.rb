@@ -156,7 +156,7 @@ class List
             
         while (node != nil)
                     
-            yield node.value.to_s
+            yield node.value
             node = node.next
         
         end

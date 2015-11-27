@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ListaEnlazada/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "ListaEnlazada"
+  spec.name          = "ListaEnlazada_Comparable_Enumerable"
   spec.version       = ListaEnlazada::VERSION
   spec.authors       = ["alu0100658682"]
   spec.email         = ["alu0100658682@ull.edu.es"]

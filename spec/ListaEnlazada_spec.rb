@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'spec_helper'
 
 describe ListaEnlazada do
@@ -246,19 +247,19 @@ describe ListaEnlazada do
    context "Comparador <=>" do
       it "#{@ebook1.to_s} < #{@revista1.to_s}" do
           
-          expect(@ebook1.to_s < @revista1.to_s).to eq true
+          expect(@ebook1 < @revista1).to eq true
           
       end
       
       it "#{@ebook1.to_s} > #{@revista1.to_s}" do
           
-          expect(@ebook1.to_s > @revista1.to_s).to eq false
+          expect(@ebook1 > @revista1).to eq false
           
       end
       
       it "#{@ebook1.to_s} == #{@revista1.to_s}" do
           
-          expect(@ebook1.to_s == @revista1.to_s).to eq false
+          expect(@ebook1 == @revista1).to eq false
           
       end
       
@@ -308,8 +309,8 @@ describe ListaEnlazada do
         @lista1.insert(2)
         @lista1.insert(4)
         @lista1.insert(3)
-        expect(@lista1.detect {|i| i.to_i % 2 == 0 && i.to_i % 4 == 0}).to eq "4"
-        expect(@lista1.detect {|i| (i.to_i) % 2 == 0}).to eq "2"
+        expect(@lista1.detect {|i| i.to_i % 2 == 0 && i.to_i % 4 == 0}).to eq 4
+        expect(@lista1.detect {|i| (i.to_i) % 2 == 0}).to eq 2
         # (1..10).detect   { |i| i % 5 == 0 and i % 7 == 0 }   #=> nil
         # (1..100).find    { |i| i % 5 == 0 and i % 7 == 0 }   #=> 35
           
@@ -317,9 +318,10 @@ describe ListaEnlazada do
       
       it "Comprobando drop." do
           
-          @lista1.insert(@nodo1)
-          @lista1.insert(@nodo2)
-          expect(@lista1.drop(1)).to eq(["[\"Dave Thomas\", \"Andy Hunt\", \"Chad Fowler\"], Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide. (The Facets of Ruby)., , Pragmatic Bookshelf, 4 edition, Sunday, 07/07/2013, [\"ISBN-13: 978-1937785499\"]"])
+          @lista1.insert(1)
+          @lista1.insert(2)
+          @lista1.insert(3)
+          expect(@lista1.drop(1)).to eq([2,3])
           
       end
       
@@ -329,7 +331,7 @@ describe ListaEnlazada do
           @lista1.insert(2)
           @lista1.insert(4)
           @lista1.insert(3)
-          expect(@lista1.max).to eq("4")
+          expect(@lista1.max).to eq(4)
           
           
       end
@@ -340,7 +342,7 @@ describe ListaEnlazada do
           @lista1.insert(2)
           @lista1.insert(4)
           @lista1.insert(3)
-          expect(@lista1.min).to eq("1")
+          expect(@lista1.min).to eq(1)
           
       end
       
@@ -350,7 +352,7 @@ describe ListaEnlazada do
           @lista1.insert(2)
           @lista1.insert(4)
           @lista1.insert(3)
-          expect(@lista1.sort).to eq(["1","2","3","4"])
+          expect(@lista1.sort).to eq([1,2,3,4])
           
       end
       
